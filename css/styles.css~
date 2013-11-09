@@ -1,0 +1,394 @@
+body,
+html
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: verdana;
+	font-size: 11px;
+	background: silver;
+	text-align: center;
+}
+
+h1
+{
+	font-family: arial;
+	font-weight: bold;
+	font-size:16px;
+	text-align: center;
+	
+	padding: 0px 0px 5px 0px;
+	border-bottom: 8px solid #0051BC;
+	min-width: 1020px;
+	margin: auto;
+	
+}
+h2
+{
+	font-family: arial;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+	margin: 0 px;
+	padding: 0px;
+	
+}
+
+
+#dashboard
+{
+	
+	background: ivory;
+	
+	margin:  0px auto;
+	
+}
+#dashboard input
+{
+	border: none;
+	margin:auto;
+}
+#pitch
+{
+	padding: 0px;
+	margin: auto;
+	
+	position: relative;
+}
+#grid
+{
+	background: #3DC63D ;
+	margin: auto;
+	margin-bottom: 300px;
+
+}
+
+#grid .square
+{
+	width: 30px;
+	height: 30px;
+	
+	border: 1px solid #54D854;
+	
+}
+#grid .square.los_left
+{
+	border-bottom: 1px solid white;
+}
+#grid .square.los_right
+{
+	border-top: 1px solid white;
+}
+
+#grid .square.widezone_up
+{
+	border-right: 1px dashed white;
+}
+#grid .square.widezone_down
+{
+	border-left: 1px dashed white;
+}
+
+#grid .square.tdzone.red
+{
+	background: #EF1D26;
+	border: 1px solid #FF3037;
+}
+#grid .square.tdzone.blue
+{
+	background: #0051BC;
+	border: 1px solid #0266EA;
+}
+
+#grid .square.occupied
+{
+	background: #aa00f3;
+}
+
+#grid tr td
+{
+	position: relative;
+}
+
+#grid .tacket
+{
+	min-width: 15px;
+	background: black;
+	color: white;
+	opacity: 0.5;
+}
+#dugout
+{
+	position: fixed;
+	bottom: 0px;
+	margin: auto;
+	
+	height: 110px;
+	width: 100%;
+}
+#dugout tr td
+{
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: #0051BC;
+	opacity: 0.7;
+}
+#dugout tr td.reserve
+{
+	width: 30%;
+}
+#dugout tr td.ko
+{
+	width: 7%
+}
+
+
+#playertemplate
+{
+	display: none;
+}
+
+
+#ball
+{
+	margin: auto;
+	text-align:center;
+}
+
+#ball-img
+{
+	
+	cursor: pointer;
+	width: 20px;
+}
+
+#ball.active #ball-img
+{
+	border:2px solid white;
+}
+#grid #ball
+{	
+	position: relative;
+	top:0px;
+	WIDTH:15PX;
+	HEIGHT: 27PX;
+}
+#grid #ball-img
+{
+	position:absolute;
+	top: 7px;
+	right: -10px;
+}
+
+.player
+{
+	width: 27px;
+	height: 27px;
+	margin: 0px;
+	padding: 0px;
+	
+	float: left;
+	border: 1px solid black;
+	cursor: pointer;
+	overflow: hidden;
+	
+}
+.player.selected-player
+{
+	background: white;
+}
+.player.selected-player .info
+{
+	opacity: 1;
+}
+
+.player.stun 
+{
+	border: 1px solid red;
+}
+.player.prone 
+{
+	border: 1px solid yellow;
+}
+
+.player.prone img,
+.player.stun img
+{
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
+.player.stun img
+{
+	-webkit-filter: brightness(40%);
+	-o-filter: brightness(40%);
+	-moz-filter: brightness(40%);
+}
+
+.player.up .upbutton,
+.player.stun .stunbutton,
+.player.prone .pronebutton
+{
+	color: yellow;
+	font-weight: bold;
+}
+
+
+.player img.pixel
+{
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+}
+
+
+
+
+.player .info
+{
+	display: none;
+	width: 227px;
+	border: 8px solid white;
+	
+	position: fixed;
+	bottom: 120px;
+	
+	padding: 3px;
+	
+	text-transform: uppercase;
+	
+	opacity:0.5;
+
+}
+.player .info.B
+{
+	left: 0px;
+	background: #0051BC;
+}
+.player .info.R
+{
+	right:0px;
+	background: #EF1D26;
+}
+
+.player .info .title
+{
+	background: url(../images/bg_grandeetoilebleue.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 3px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 5px;
+	color: yellow;
+}
+
+.player .info .carac
+{
+	
+	width: 39px;
+	height: 33px;
+	background: white;
+	padding: 5px;
+	margin-left: 6px;
+	margin-bottom: 5px;
+	font-weight:bold;
+	
+	text-align: center;
+	float:left;
+
+}
+.player .info .carac .caractitle
+{
+	margin: 0px 0px 3px 0px;
+	padding: 3px;
+	
+	color: yellow;
+	font-size: 8px;
+}
+.player .info.B .carac .caractitle
+{
+	background: #EF1D26;
+}
+.player .info.R .carac .caractitle
+{
+	background: #0051BC;
+}
+.player .info .carac.skills
+{
+	display:table;
+	width: 204px;
+}
+
+.player .info .cost
+{
+	font-weight:bold;
+	color: yellow;
+	text-align:center;
+}
+
+.player .buttons
+{
+	text-align:center;
+	height: 30px;
+	width: 100%;
+	display:table;
+	border-top: 1px solid #0051BC;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.player .buttons .buttontitle
+{
+	padding-top:3px;
+	color: #C9C7C7;
+}
+.player .buttons input
+{
+	background: none;
+	border: none;
+}
+
+
+.player.team1
+{
+	
+}
+
+.player.team2
+{
+	
+}
+
+
+
+.vestiaire
+{
+	margin: 0px;
+	padding: 0px;
+	width: 233px;
+	height: 200px;
+	border: 8px solid white;
+	
+	position: fixed;
+	
+	top: 0px;
+}
+
+#vestiaireB
+{
+	left: 0px;
+	background: #0051BC;
+}
+#vestiaireR
+{
+	right: 0px;
+	background: #EF1D26;
+}
+
+
+.instructions
+{
+	margin-top: 30px;
+	padding: 5px;
+	color: grey;
+}
